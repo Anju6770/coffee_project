@@ -80,8 +80,8 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            height: 45,
-                            width: 50,
+                            height: MediaQuery.of(context).size.height*0.05,
+                            width: MediaQuery.of(context).size.width*0.13,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: one
@@ -112,8 +112,8 @@ class HomePage extends StatelessWidget {
                                 top: -23,
                                 right: -10,
                                 child: Container(
-                                  height: 170,
-                                  width: 200,
+                                  height: MediaQuery.of(context).size.height*0.25,
+                                  width: MediaQuery.of(context).size.width*0.5,
                                   child: Image.asset('assets/image/coff-removebg-preview.png',fit: BoxFit.cover,),),
                               ),
                               Positioned(
@@ -123,8 +123,8 @@ class HomePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                        height: 30,
-                                        width: 80,
+                                        height: MediaQuery.of(context).size.height*0.033,
+                                        width: MediaQuery.of(context).size.width*0.2,
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(10),
                                             color: Colors.red
@@ -178,7 +178,7 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(9),
                 child: SizedBox(
-                  height: 50,
+                  height: MediaQuery.of(context).size.height*0.05,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: name.length,
@@ -196,7 +196,7 @@ class HomePage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               color: isSelected
                                   ? one // Color when selected
-                                  : Colors.grey.withOpacity(0.3), // Color when not selected
+                                  : Colors.grey.withOpacity(0.3),
                             ),
                             child: Center(
                                 child: Text("${name[index].name}", style: myStyle(15,isSelected ? Colors.white : Colors.black, FontWeight.bold),
@@ -216,7 +216,7 @@ class HomePage extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 5,
                   crossAxisSpacing: 4,
-                  childAspectRatio: 0.7,
+                  childAspectRatio: 0.55,
                 ),
                 itemBuilder: (context, index) {
                   return Column(
@@ -234,8 +234,8 @@ class HomePage extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  height: 100,
-                                  width: 200,
+                                  height: MediaQuery.of(context).size.height*0.15,
+                                  width: double.infinity,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     image: DecorationImage(
@@ -248,8 +248,8 @@ class HomePage extends StatelessWidget {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       Container(
-                                        height: 23,
-                                        width: 50,
+                                        height: MediaQuery.of(context).size.height*0.033,
+                                        width: MediaQuery.of(context).size.width*0.15,
                                         decoration: BoxDecoration(
                                           color: three,
                                           borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10)),
@@ -300,12 +300,12 @@ class HomePage extends StatelessWidget {
                                       ),
                                       child: IconButton(
                                         onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => CoffeeDetailPage(coffee: homeController.filteredData[index]),
-                                            ),
-                                          );
+                                          // Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //     builder: (context) => CoffeeDetailPage(coffee: homeController.filteredData[index]),
+                                          //   ),
+                                          // );
                                         },
                                         icon: Icon(Icons.add),
                                         color: Colors.white,
